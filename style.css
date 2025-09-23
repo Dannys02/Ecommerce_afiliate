@@ -1,6 +1,10 @@
-/* ✅ jangan override semua elemen */
-body {
+* {
     font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+body {
+    background: linear-gradient(to bottom right, #ffecec, #fff6f6);
 }
 
 /* Animations */
@@ -38,13 +42,140 @@ body {
     }
 }
 
-.navbar {
+/* === NAVBAR === */
+.nav-navbar {
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 50;
+    border-bottom: 1px solid grey;
+}
+
+.nav-container {
+    padding: 0 2rem;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #2563eb, #9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-menu {
+    display: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding-bottom: 4px;
+    color: black;
+}
+
+.nav-link:hover {
+    color: #2563eb;
+}
+
+.nav-link i {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.nav-link:hover i {
+    opacity: 1;
+}
+
+/* Underline animation */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #6366f1;
+    transition: all 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Mobile button */
+.nav-mobile-btn {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: #e5e7eb;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.nav-mobile-btn:hover {
+    background: #d1d5db;
+}
+
+.nav-mobile-icon {
+    width: 24px;
+    height: 24px;
+    color: #374151;
+}
+
+/* Mobile menu */
+.nav-mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    border-top: 1px solid #e5e7eb;
+}
+
+.nav-mobile-menu.show {
+    display: flex;
+}
+
+.nav-mobile-link {
+    padding: 0.75rem 1rem;
+    color: #374151;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-mobile-link:hover {
+    color: #2563eb;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .nav-menu {
+        display: flex;
+    }
+
+    .nav-mobile-btn {
+        display: none;
+    }
+
+    .nav-mobile-menu {
+        display: none !important;
+    }
 }
 
 /* ====================
