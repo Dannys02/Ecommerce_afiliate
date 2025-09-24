@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CardShop - Koleksi Card Premium</title>
+  <title>FrostStyle - Koleksi Card Premium</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -100,7 +100,7 @@
   <!-- Search Section -->
   <section class="halaman-cari">
     <div class="kontainer-cari">
-      <div class="bungkus-cari">
+      <div class="bungkus-cari from-bottom">
         <input type="text" id="searchInput" placeholder="Cari produk card..." class="input-cari">
         <svg class="ikon-cari" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -111,38 +111,34 @@
   </section>
 
   <!-- Products Section -->
-  <!-- Products Section -->
   <section id="products" class="halaman-produk">
     <div class="kontainer-produk">
 
       <!-- Heading -->
       <div class="judul-produk">
-        <h2 class="judul-teks">Koleksi Produk</h2>
-        <p class="deskripsi-teks">Pilihan terbaik card premium untuk koleksi Anda</p>
+        <h2 class="judul-home from-bottom">Koleksi <span class="teks-gradient-home">Produk</span></h2>
+        <p class="deskripsi-teks from-bottom">Pilihan terbaik card premium untuk koleksi Anda</p>
       </div>
 
       <!-- Category Filter -->
       <div class="filter-produk">
-        <button onclick="filterProducts('all')" class="tombol-filter aktif">Semua</button>
-        <button onclick="filterProducts('pokemon')" class="tombol-filter">Aksesoris mode</button>
-        <button onclick="filterProducts('yugioh')" class="tombol-filter">Makanan & Minuman</button>
-        <button onclick="filterProducts('mtg')" class="tombol-filter">Laptop gaming</button>
-        <button onclick="filterProducts('limited')" class="tombol-filter">Audio & Video</button>
+        <button onclick="filterProducts('all')" class="tombol-filter aktif from-bottom">Semua</button>
+        <button onclick="filterProducts('pokemon')" class="tombol-filter from-bottom">Aksesoris mode</button>
+        <button onclick="filterProducts('yugioh')" class="tombol-filter from-bottom">Makanan & Minuman</button>
+        <button onclick="filterProducts('mtg')" class="tombol-filter from-bottom">Laptop gaming</button>
+        <button onclick="filterProducts('limited')" class="tombol-filter from-bottom">Audio & Video</button>
       </div>
 
-      <!-- Products Grid -->
       <div id="productsGrid" class="grid-produk">
 
-        <!-- Card Produk -->
         <div class="kartu-produk" data-category="pokemon">
-          <img src="https://via.placeholder.com/300x400/FF6B6B/FFFFFF?text=Charizard+VMAX" alt="Charizard VMAX"
-            class="gambar-produk">
+          <img src="assets/img-1.jpeg" alt="Charizard VMAX" class="gambar-produk">
           <div class="isi-kartu">
-            <h3 class="judul-kartu">Charizard VMAX Rainbow</h3>
-            <p class="deskripsi-kartu">Card Pokemon legendaris dengan holographic effect</p>
+            <h3 class="judul-kartu">ECERAN BASO ACI PREMIUM</h3>
+            <p class="deskripsi-kartu">Paket satuan boci 6 pentol Food Instan bakso aci Bacil</p>
             <div class="info-kartu">
-              <span class="harga-produk">Rp 2.500.000</span>
-              <span class="label-produk">POKEMON</span>
+              <span class="harga-produk">Rp 8.000</span>
+              <span class="label-produk">Makanan</span>
             </div>
             <div class="aksi-kartu">
               <button class="tombol-pesan">Pesan Sekarang</button>
@@ -151,16 +147,14 @@
           </div>
         </div>
 
-        <!-- Duplicate produk lain tetap sama struktur -->
         <div class="kartu-produk" data-category="pokemon">
-          <img src="https://via.placeholder.com/300x400/FF6B6B/FFFFFF?text=Charizard+VMAX" alt="Charizard VMAX"
-            class="gambar-produk">
+          <img src="assets/img-2.jpeg" alt="Charizard VMAX" class="gambar-produk">
           <div class="isi-kartu">
-            <h3 class="judul-kartu">Charizard VMAX Rainbow</h3>
-            <p class="deskripsi-kartu">Card Pokemon legendaris dengan holographic effect</p>
+            <h3 class="judul-kartu">Seblak mix Daun Jeruk</h3>
+            <p class="deskripsi-kartu">Pedas sedang daun jeruk kemasan 250 gram Cemilan Keripik Kering Snacks Food</p>
             <div class="info-kartu">
-              <span class="harga-produk">Rp 2.500.000</span>
-              <span class="label-produk">POKEMON</span>
+              <span class="harga-produk">Rp 15.000</span>
+              <span class="label-produk">Makanan</span>
             </div>
             <div class="aksi-kartu">
               <button class="tombol-pesan">Pesan Sekarang</button>
@@ -169,7 +163,37 @@
           </div>
         </div>
 
-        <!-- ... lanjut semua produk lain copy paste sama struktur ... -->
+        <div class="kartu-produk" data-category="pokemon">
+          <img src="assets/img-3.jpeg" alt="Charizard VMAX" class="gambar-produk">
+          <div class="isi-kartu">
+            <h3 class="judul-kartu">Basreng pedas daun jeruk</h3>
+            <p class="deskripsi-kartu">Basreng pedas daun jeruk kemasan 500gram Cemilan Instan Makanan</p>
+            <div class="info-kartu">
+              <span class="harga-produk">Rp 22.100</span>
+              <span class="label-produk">Makanan</span>
+            </div>
+            <div class="aksi-kartu">
+              <button class="tombol-pesan">Pesan Sekarang</button>
+              <button class="tombol-favorit">❤️</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="kartu-produk" data-category="pokemon">
+          <img src="assets/img-4.jpeg" alt="Charizard VMAX" class="gambar-produk">
+          <div class="isi-kartu">
+            <h3 class="judul-kartu">Usus Krispi / kripik usus 500 Gram</h3>
+            <p class="deskripsi-kartu">500Gram usus Crispy bumbu Pedas daun jeruk bos kriuk Cemilan Food Snacks</p>
+            <div class="info-kartu">
+              <span class="harga-produk">Rp 50.000</span>
+              <span class="label-produk">Makanan</span>
+            </div>
+            <div class="aksi-kartu">
+              <button class="tombol-pesan">Pesan Sekarang</button>
+              <button class="tombol-favorit">❤️</button>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -177,58 +201,55 @@
 
 
   <!-- About Section -->
-  <section id="about" class="py-16 bg-white dark:bg-gray-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div class="animate-slide-up">
-          <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">Tentang CardShop</h2>
-          <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
-            CardShop adalah toko online terpercaya yang menghadirkan berbagai koleksi card premium dari seluruh dunia.
+  <section id="tentang">
+    <div class="kontainer-tentang">
+      <div class="grid-tentang">
+        <!-- Kolom kiri -->
+        <div class="slide-up" style="color: white !important;">
+          <h2 class="judul-tentang">Tentang FrostStyle</h2>
+          <p class="paragraf-tentang">
+            FrostStyle adalah toko online terpercaya yang menghadirkan berbagai koleksi card premium dari seluruh dunia.
             Kami berkomitmen untuk menyediakan produk berkualitas tinggi dengan harga yang kompetitif.
           </p>
-          <div class="space-y-4">
-            <div class="flex items-center space-x-3">
-              <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"></path>
+          <div class="list-tentang">
+            <div class="item-tentang">
+              <div class="ikon-bulat">
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 
+                    01-1.414 0l-4-4a1 1 0 011.414-1.414L8 
+                    12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
               </div>
-              <span class="text-gray-700 dark:text-gray-300">100% Produk Original</span>
+              <span class="teks-item">100% Produk Original</span>
             </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"></path>
+            <div class="item-tentang">
+              <div class="ikon-bulat">
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 
+                    01-1.414 0l-4-4a1 1 0 011.414-1.414L8 
+                    12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
               </div>
-              <span class="text-gray-700 dark:text-gray-300">Pengiriman Aman & Cepat</span>
+              <span class="teks-item">Pengiriman Aman & Cepat</span>
             </div>
-            <div class="flex items-center space-x-3">
-              <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"></path>
+            <div class="item-tentang">
+              <div class="ikon-bulat">
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 
+                    01-1.414 0l-4-4a1 1 0 011.414-1.414L8 
+                    12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
               </div>
-              <span class="text-gray-700 dark:text-gray-300">Customer Service 24/7</span>
+              <span class="teks-item">Customer Service 24/7</span>
             </div>
           </div>
         </div>
-        <div class="flex justify-center">
-          <div class="relative">
-            <div class="w-80 h-80 bg-gradient-to-br from-blue-400 to-purple-600 rounded-3xl shadow-2xl animate-float">
-            </div>
-            <div
-              class="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl shadow-xl animate-float"
-              style="animation-delay: 1s;"></div>
-            <div
-              class="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-green-400 to-blue-500 rounded-xl shadow-lg animate-float"
-              style="animation-delay: 2s;"></div>
+        <!-- Kolom kanan -->
+        <div class="gambar-tentang">
+          <div class="bungkus-gambar">
+            <div class="kotak-besar"></div>
+            <div class="kotak-kuning"></div>
+            <div class="kotak-hijau"></div>
           </div>
         </div>
       </div>
@@ -236,40 +257,34 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Hubungi Kami</h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300">Punya pertanyaan? Kami siap membantu Anda!</p>
+  <section id="kontak">
+    <div class="kontainer-kontak">
+      <div class="teks-tengah">
+        <h2 class="judul-kontak">Hubungi Kami</h2>
+        <p class="subjudul-kontak">Punya pertanyaan? Kami siap membantu Anda!</p>
       </div>
 
-      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8">
-        <form id="contactForm" class="space-y-6">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="kotak-form">
+        <form id="formKontak" class="formulir">
+          <div class="grid-dua">
             <div>
-              <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nama
-                Lengkap</label>
-              <input type="text" id="name" name="name" required
-                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300">
+              <label for="nama" class="label-form">Nama Lengkap</label>
+              <input type="text" id="nama" name="nama" required class="input-form">
             </div>
             <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
-              <input type="email" id="email" name="email" required
-                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300">
+              <label for="email" class="label-form">Email</label>
+              <input type="email" id="email" name="email" required class="input-form">
             </div>
           </div>
 
           <div>
-            <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nomor
-              Telepon</label>
-            <input type="tel" id="phone" name="phone" required
-              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300">
+            <label for="telepon" class="label-form">Nomor Telepon</label>
+            <input type="tel" id="telepon" name="telepon" required class="input-form">
           </div>
 
           <div>
-            <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Subjek</label>
-            <select id="subject" name="subject" required
-              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300">
+            <label for="subjek" class="label-form">Subjek</label>
+            <select id="subjek" name="subjek" required class="select-form">
               <option value="">Pilih Subjek</option>
               <option value="Pertanyaan Produk">Pertanyaan Produk</option>
               <option value="Pemesanan">Pemesanan</option>
@@ -280,26 +295,38 @@
           </div>
 
           <div>
-            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Pesan</label>
-            <textarea id="message" name="message" rows="5" required
-              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300 resize-none"></textarea>
+            <label for="pesan" class="label-form">Pesan</label>
+            <textarea id="pesan" name="pesan" rows="5" required class="textarea-form"></textarea>
           </div>
 
-          <div class="flex flex-col sm:flex-row gap-4">
-            <button type="submit" id="whatsappBtn"
-              class="flex-1 bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-2.462-.996-4.779-2.811-6.598-1.815-1.819-4.148-2.816-6.616-2.816-5.448 0-9.886 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.288-.859zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+          <div class="tombol-grup">
+            <button type="submit" id="tombolWa" class="tombol wa">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 
+                  5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 
+                  8.413 3.488 2.245 2.248 3.481 5.236 3.48 
+                  8.414-.003 6.557-5.338 11.892-11.893 
+                  11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 
+                  1.654zm6.597-3.807c1.676.995 3.276 1.591 
+                  5.392 1.592 5.448 0 9.886-4.434 
+                  9.889-9.885.002-2.462-.996-4.779-2.811-6.598-1.815-1.819-4.148-2.816-6.616-2.816-5.448 
+                  0-9.886 4.434-9.889 9.884-.001 
+                  2.225.651 3.891 1.746 5.634l-.999 
+                  3.648 3.288-.859zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 
+                  1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 
+                  1.016-1.04 2.479 1.065 2.876 1.213 
+                  3.074c.149.198 2.095 3.2 5.076 
+                  4.487.709.306 1.263.489 1.694.626.712.226 
+                  1.36.194 1.872.118.571-.085 1.758-.719 
+                  2.006-1.413.248-.695.248-1.29.173-1.414z" />
               </svg>
               <span>Kirim via WhatsApp</span>
             </button>
-            <button type="button" id="emailBtn"
-              class="flex-1 bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                </path>
+            <button type="button" id="tombolEmail" class="tombol email">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 
+                  002-2V7a2 2 0 00-2-2H5a2 2 0 
+                  00-2 2v10a2 2 0 002 2z"></path>
               </svg>
               <span>Kirim via Email</span>
             </button>
@@ -309,14 +336,15 @@
     </div>
   </section>
 
+
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-12">
+  <!-- <footer class="bg-gray-900 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="col-span-1 md:col-span-2">
           <div
             class="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
-            CardShop
+            FrostStyle
           </div>
           <p class="text-gray-400 mb-4">
             Platform terpercaya untuk koleksi card premium dengan kualitas terjamin dan layanan terbaik.
@@ -376,11 +404,11 @@
 
       <div class="border-t border-gray-800 mt-8 pt-8 text-center">
         <p class="text-gray-400">
-          &copy; 2024 CardShop. Semua hak cipta dilindungi. | Dibuat dengan ❤️ di Indonesia
+          &copy; 2024 FrostStyle. Semua hak cipta dilindungi. | Dibuat dengan ❤️ di Indonesia
         </p>
       </div>
     </div>
-  </footer>
+  </footer> -->
 
   <script src="script.js"></script>
 </body>
