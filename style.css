@@ -1,45 +1,11 @@
 * {
     font-family: "Poppins", sans-serif;
     font-style: normal;
+    scroll-behavior: smooth;
 }
 
 body {
-    background: linear-gradient(to bottom right, #ffecec, #fff6f6);
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideUp {
-    from {
-        transform: translateY(30px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
+    background: linear-gradient(120deg, #0b0f22 0%, #2c265e 50%, #523fa0 100%);
 }
 
 /* === NAVBAR === */
@@ -85,16 +51,18 @@ body {
     font-size: 0.95rem;
     text-decoration: none;
     padding-bottom: 4px;
-    color: black;
+    transition: color 0.3s ease;
+    color: white;
 }
 
 .nav-link:hover {
-    color: #2563eb;
+    color: #2563eb !important;
 }
 
 .nav-link i {
     opacity: 0;
     transition: opacity 0.3s;
+    color: #2563eb !important;
 }
 
 .nav-link:hover i {
@@ -183,22 +151,18 @@ body {
    ==================== */
 .halaman-home {
     padding-top: 9rem;
-    /* py-36 */
     padding-bottom: 9rem;
     transition: background-color 0.3s ease;
 }
 
 .halaman-home.dark {
     background: linear-gradient(to bottom right, #111827, #1f2937);
-    /* dark:from-gray-900 dark:to-gray-800 */
 }
 
 .kontainer-home {
     max-width: 1280px;
-    /* max-w-7xl */
     margin: 0 auto;
     padding: 0 1rem;
-    /* px-4 */
 }
 
 .teks-home {
@@ -207,16 +171,13 @@ body {
 
 .judul-home {
     font-size: 3rem;
-    /* text-5xl */
     font-weight: 700;
-    color: #111827;
-    /* text-gray-900 */
+    color: #608ce9;
     margin-bottom: 1.5rem;
 }
 
 .halaman-home.dark .judul-home {
     color: #ffffff;
-    /* dark:text-white */
 }
 
 .teks-gradient-home {
@@ -227,19 +188,16 @@ body {
 
 .subjudul-home {
     font-size: 1.25rem;
-    /* text-xl */
-    color: #4b5563;
-    /* text-gray-600 */
+    color: white;
     margin: 0 auto 2rem;
     max-width: 48rem;
 }
 
 .halaman-home.dark .subjudul-home {
     color: #d1d5db;
-    /* dark:text-gray-300 */
 }
 
-/* Tombol Home */
+/* tombol home */
 .tombol-home {
     position: relative;
     overflow: hidden;
@@ -296,9 +254,7 @@ body {
 
 .kartu-home {
     width: 10rem;
-    /* w-40 */
     height: 12rem;
-    /* h-48 */
     border-radius: 0.75rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
@@ -310,6 +266,8 @@ body {
     justify-content: center;
     text-align: center;
     transition: all 0.5s ease;
+    cursor: pointer;
+    color: white;
     animation: mengambang 3s ease-in-out infinite;
 }
 
@@ -320,19 +278,37 @@ body {
 
 .ikon-kartu {
     font-size: 1.875rem;
-    /* text-3xl */
 }
 
 .judul-kartu {
     margin-top: 0.75rem;
-    color: #ffffff;
     font-weight: 600;
+    color: white !important;
 }
 
 .deskripsi-kartu {
     font-size: 0.875rem;
-    color: #d1d5db;
+    color: white !important;
 }
+
+.from-bottom {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: naik 1.5s ease forwards;
+}
+
+@keyframes naik {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 /* Animasi */
 @keyframes masuk {
@@ -357,6 +333,22 @@ body {
     }
 }
 
+.delay-0 {
+    animation-delay: 0s;
+}
+
+.delay-1 {
+    animation-delay: 0.3s;
+}
+
+.delay-2 {
+    animation-delay: 0.6s;
+}
+
+.delay-3 {
+    animation-delay: 0.9s;
+}
+
 @keyframes mengambang {
 
     0%,
@@ -369,14 +361,6 @@ body {
     }
 }
 
-.animasi-masuk {
-    animation: masuk 0.8s ease-in-out forwards;
-}
-
-.animasi-naik {
-    animation: naik 0.8s ease-in-out forwards;
-}
-
 /* ====================
    Halaman Pencarian
    ==================== */
@@ -384,11 +368,9 @@ body {
     padding-top: 2rem;
     padding-bottom: 2rem;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    background: red;
     transition: background-color 0.3s ease;
-}
 
-.halaman-cari.dark {
-    background: #1f2937;
 }
 
 .kontainer-cari {
@@ -396,6 +378,7 @@ body {
     margin: 0 auto;
     padding-left: 1rem;
     padding-right: 1rem;
+    background: blue;
 }
 
 @media (min-width: 640px) {
@@ -453,12 +436,10 @@ body {
    ==================== */
 .halaman-produk {
     padding: 4rem 0;
-    /* py-16 */
 }
 
 .kontainer-produk {
     max-width: 80rem;
-    /* max-w-7xl */
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -538,7 +519,6 @@ body {
 
 .tombol-filter.aktif {
     background: #2563eb;
-    /* blue-600 */
     color: #fff;
 }
 
