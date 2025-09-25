@@ -158,8 +158,6 @@ body {
     border-bottom: 1px solid #9333ea;
 }
 
-
-
 .kontainer-home {
     max-width: 1280px;
     margin: 0 auto;
@@ -177,8 +175,6 @@ body {
     margin-bottom: 1.5rem;
 }
 
-
-
 .teks-gradient-home {
     background: linear-gradient(to right, #2563eb, #9333ea);
     -webkit-background-clip: text;
@@ -191,8 +187,6 @@ body {
     margin: 0 auto 2rem;
     max-width: 48rem;
 }
-
-
 
 /* tombol home */
 .tombol-home {
@@ -284,7 +278,13 @@ body {
 .from-bottom {
     opacity: 0;
     transform: translateY(10px);
-    animation: naik 1.5s ease forwards;
+    transition: transform 1.5s ease, opacity 1s ease;
+    will-change: transform, opacity;
+}
+
+.from-bottom.show {
+    opacity: 1;
+    transform: translateY(0)
 }
 
 @keyframes naik {
@@ -298,7 +298,6 @@ body {
         transform: translateY(0);
     }
 }
-
 
 /* Animasi */
 @keyframes masuk {
@@ -424,15 +423,11 @@ body {
     margin-bottom: 3rem;
 }
 
-
-
 .deskripsi-teks {
     font-size: 1.25rem;
     color: white;
     transition: color 0.3s ease;
 }
-
-
 
 /* Filter Buttons */
 .filter-produk {
@@ -450,18 +445,13 @@ body {
     border: none;
     font-size: 1rem;
     transition: background 0.3s, color 0.3s;
-    background: #caccd1;
-    /* gray-200 */
+    background: white;
     color: #374151;
 }
 
 .tombol-filter:hover {
-    background: white;
+    background: #caccd1;
 }
-
-
-
-
 
 .tombol-filter.aktif {
     background: #2563eb;
@@ -518,15 +508,12 @@ body {
     transform: scale(1.1);
 }
 
-
-
 .gambar-produk {
     width: 100%;
     height: 16rem;
     object-fit: cover;
     border-bottom: 1px solid #9333ea;
     transition: all 0.5s ease;
-
 }
 
 .isi-kartu {
@@ -540,15 +527,11 @@ body {
     color: #111827;
 }
 
-
-
 .deskripsi-kartu {
     font-size: 0.875rem;
     color: #4b5563;
     margin-bottom: 1rem;
 }
-
-
 
 .info-kartu {
     display: flex;
@@ -563,8 +546,6 @@ body {
     color: #2563eb;
 }
 
-
-
 .label-produk {
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
@@ -572,8 +553,6 @@ body {
     background: #f3f4f6;
     color: #4b5563;
 }
-
-
 
 /* Tombol Aksi */
 .aksi-kartu {
@@ -689,8 +668,7 @@ body {
 /* Bagian kanan */
 .gambar-tentang {
     display: flex;
-    justify-content: end;
-    padding-right: 4rem;
+    justify-content: center;
 }
 
 .bungkus-gambar {
@@ -898,4 +876,131 @@ body {
 .email:hover {
     background-color: #1D4ED8;
     box-shadow: 0 10px 20px rgba(37, 99, 235, 0.4);
+}
+
+/* Footer */
+.ft {
+    background: #111827;
+    color: #fff;
+    padding: 3rem 0;
+}
+
+.kt {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.gd {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media(min-width:768px) {
+    .gd {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+
+.jd {
+    font-size: 1.875rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.ds {
+    color: #9ca3af;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.sos {
+    display: flex;
+    gap: 1rem;
+}
+
+.ic {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .3s;
+}
+
+.sv {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: currentColor;
+}
+
+.biru {
+    background: #2563eb;
+}
+
+.biru:hover {
+    background: #1e40af;
+}
+
+.birut {
+    background: #1e3a8a;
+}
+
+.birut:hover {
+    background: #1e3a8a;
+}
+
+.pink {
+    background: #db2777;
+}
+
+.pink:hover {
+    background: #be185d;
+}
+
+.merah {
+    background: #dc2626;
+}
+
+.merah:hover {
+    background: #b91c1c;
+}
+
+/* Kolom */
+.jk {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.dl {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dl li a {
+    color: #9ca3af;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: .5rem;
+    transition: color .3s;
+}
+
+.dl li a:hover {
+    color: #fff;
+}
+
+.gr {
+    border-top: 1px solid #1f2937;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    text-align: center;
+    color: #9ca3af;
+    font-size: .875rem;
 }
