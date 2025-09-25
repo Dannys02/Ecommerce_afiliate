@@ -17,12 +17,6 @@ function initializeDarkMode() {
   }
 }
 
-darkModeToggle.addEventListener('click', function () {
-  document.documentElement.classList.toggle('dark');
-  const isDarkMode = document.documentElement.classList.contains('dark');
-  localStorage.setItem('darkMode', isDarkMode);
-});
-
 // Mobile menu toggle
 mobileMenuBtn.addEventListener('click', function () {
   mobileMenu.classList.toggle('hidden');
@@ -41,56 +35,7 @@ function addToWishlist(productId) {
   alert('Produk berhasil ditambahkan ke wishlist!');
 }
 
-// Contact form handling
-contactForm.addEventListener('submit', function (e) {
-  e.preventDefault();
-  handleWhatsAppContact();
-});
 
-whatsappBtn.addEventListener('click', function (e) {
-  e.preventDefault();
-  handleWhatsAppContact();
-});
-
-emailBtn.addEventListener('click', function (e) {
-  e.preventDefault();
-  handleEmailContact();
-});
-
-function handleWhatsAppContact() {
-  if (validateForm()) {
-    const formData = getFormData();
-    const message = `*Pesan dari Website CardShop*\n\n` +
-      `Nama: ${formData.name}\n` +
-      `Email: ${formData.email}\n` +
-      `Telepon: ${formData.phone}\n` +
-      `Subjek: ${formData.subject}\n\n` +
-      `Pesan:\n${formData.message}`;
-
-    const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-
-    showSuccessMessage('Pesan berhasil dikirim via WhatsApp!');
-    resetForm();
-  }
-}
-
-function handleEmailContact() {
-  if (validateForm()) {
-    const formData = getFormData();
-    const subject = `CardShop: ${formData.subject}`;
-    const body = `Nama: ${formData.name}\n` +
-      `Email: ${formData.email}\n` +
-      `Telepon: ${formData.phone}\n\n` +
-      `Pesan:\n${formData.message}`;
-
-    const emailUrl = `mailto:admin@cardshop.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = emailUrl;
-
-    showSuccessMessage('Email client telah dibuka!');
-    resetForm();
-  }
-}
 
 function validateForm() {
   const requiredFields = ['name', 'email', 'phone', 'subject', 'message'];
@@ -170,6 +115,15 @@ window.addEventListener('scroll', function () {
   }
 });
 
-const elements = document.querySelector(".from-bottom");
+const elements = document.querySelectorAll(".from-bottom");
 
-// const ob]''
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
+  });
+}, { threshold: 0.2 });
+elements.forEach(el => observer.observe(el));

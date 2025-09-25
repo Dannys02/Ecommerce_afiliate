@@ -1,5 +1,4 @@
 * {
-    font-family: "Poppins", sans-serif;
     font-style: normal;
     padding: 0;
     margin: 0;
@@ -7,10 +6,12 @@
 }
 
 body {
-    background: linear-gradient(120deg, #0b0f22 0%, #2c265e 50%, #523fa0 100%);
+    background: linear-gradient(135deg, #0f172a, #312e81, #1e3a8a);
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-/* === NAVBAR === */
 .nav-navbar {
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
@@ -71,7 +72,6 @@ body {
     opacity: 1;
 }
 
-/* Underline animation */
 .nav-link::after {
     content: '';
     position: absolute;
@@ -88,7 +88,6 @@ body {
     left: 0;
 }
 
-/* Mobile button */
 .nav-mobile-btn {
     display: flex;
     align-items: center;
@@ -110,7 +109,6 @@ body {
     color: #374151;
 }
 
-/* Mobile menu */
 .nav-mobile-menu {
     display: none;
     flex-direction: column;
@@ -133,7 +131,6 @@ body {
     color: #2563eb;
 }
 
-/* Responsive */
 @media (min-width: 768px) {
     .nav-menu {
         display: flex;
@@ -148,14 +145,10 @@ body {
     }
 }
 
-/* ====================
-   Halaman Home
-   ==================== */
+/* Home */
 .halaman-home {
     padding-top: 9rem;
     padding-bottom: 4rem;
-    transition: background-color 0.3s ease;
-    border-bottom: 1px solid #9333ea;
 }
 
 .kontainer-home {
@@ -188,7 +181,6 @@ body {
     max-width: 48rem;
 }
 
-/* tombol home */
 .tombol-home {
     position: relative;
     overflow: hidden;
@@ -227,7 +219,6 @@ body {
     box-shadow: 0 10px 20px rgba(59, 130, 246, 0.5);
 }
 
-/* Kartu Koleksi */
 .kartu-koleksi-home {
     display: flex;
     justify-content: center;
@@ -277,7 +268,7 @@ body {
 
 .from-bottom {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(20px);
     transition: transform 1.5s ease, opacity 1s ease;
     will-change: transform, opacity;
 }
@@ -285,41 +276,6 @@ body {
 .from-bottom.show {
     opacity: 1;
     transform: translateY(0)
-}
-
-@keyframes naik {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Animasi */
-@keyframes masuk {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes naik {
-    from {
-        transform: translateY(30px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
 }
 
 .delay-0 {
@@ -350,13 +306,11 @@ body {
     }
 }
 
-/* ====================
-   Halaman Pencarian
-   ==================== */
+/* Search */
 .halaman-cari {
     width: 100%;
     min-height: 20vh;
-    background: linear-gradient(120deg, #1b2553 0%, #2c265e 50%, #5b46b1 100%);
+    background: linear-gradient(135deg, #0f172a, #312e81, #1e3a8a);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -381,12 +335,12 @@ body {
     border: none;
     outline: none;
     font-size: 16px;
-    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25); */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
     transition: all 0.3s ease;
 }
 
 .input-cari:focus {
-    box-shadow: 0 0 14px rgba(0, 24, 241, 0.6);
+    box-shadow: 0 0 24px rgba(120, 0, 241, 0.6);
 }
 
 .ikon-cari {
@@ -405,9 +359,7 @@ body {
     stroke: #2575fc;
 }
 
-/* ====================
-   Produk Section
-   ==================== */
+/* Products */
 .halaman-produk {
     padding: 4rem 0;
 }
@@ -426,10 +378,8 @@ body {
 .deskripsi-teks {
     font-size: 1.25rem;
     color: white;
-    transition: color 0.3s ease;
 }
 
-/* Filter Buttons */
 .filter-produk {
     display: flex;
     flex-wrap: wrap;
@@ -453,16 +403,6 @@ body {
     background: #caccd1;
 }
 
-.tombol-filter.aktif {
-    background: #2563eb;
-    color: #fff;
-}
-
-.tombol-filter.aktif:hover {
-    background: #1d4ed8;
-}
-
-/* Produk Grid */
 .grid-produk {
     display: grid;
     grid-template-columns: 1fr;
@@ -487,7 +427,6 @@ body {
     }
 }
 
-/* Kartu Produk */
 .kartu-produk {
     background: rgba(0, 0, 0, 0.10);
     backdrop-filter: blur(20px);
@@ -497,6 +436,7 @@ body {
     overflow: hidden;
     transition: all 0.3s ease;
     transform: scale(1);
+    height: 35rem;
 }
 
 .kartu-produk:hover {
@@ -554,7 +494,6 @@ body {
     color: #4b5563;
 }
 
-/* Tombol Aksi */
 .aksi-kartu {
     display: flex;
     gap: 0.5rem;
@@ -594,9 +533,7 @@ body {
     background: #374151;
 }
 
-/* ====================
-   About Section
-   ==================== */
+/* About */
 #tentang {
     padding: 5rem 0;
 }
@@ -621,6 +558,7 @@ body {
 }
 
 .judul-tentang {
+    color: #608ce9;
     font-size: 2.25rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -665,7 +603,6 @@ body {
     font-size: 1rem;
 }
 
-/* Bagian kanan */
 .gambar-tentang {
     display: flex;
     justify-content: center;
@@ -710,7 +647,6 @@ body {
     animation-delay: 2s;
 }
 
-/* Animasi */
 @keyframes melayang {
 
     0%,
@@ -723,8 +659,8 @@ body {
     }
 }
 
-/* Animasi slide-up */
 .slide-up {
+    padding-left: 1.5rem;
     animation: slideUp 1s ease forwards;
     opacity: 0;
 }
@@ -741,9 +677,7 @@ body {
     }
 }
 
-/* ====================
-   About Section
-   ==================== */
+/* Contact */
 
 #kontak {
     padding: 4rem 0;
@@ -765,6 +699,7 @@ body {
     font-size: 2.25rem;
     font-weight: 700;
     margin-bottom: 1rem;
+    color: #608ce9;
 }
 
 .subjudul-kontak {
@@ -773,7 +708,7 @@ body {
 
 .kotak-form {
     border-radius: 1rem;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 2rem;
 }
 
@@ -846,6 +781,7 @@ body {
     justify-content: center;
     gap: 0.5rem;
     padding: 1rem 2rem;
+    width: 100%;
     border-radius: 0.5rem;
     font-size: 1.125rem;
     font-weight: 600;
@@ -971,7 +907,6 @@ body {
     background: #b91c1c;
 }
 
-/* Kolom */
 .jk {
     font-size: 1.25rem;
     font-weight: 600;
