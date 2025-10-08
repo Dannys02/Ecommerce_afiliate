@@ -1,5 +1,30 @@
+const tombolMenu = document.getElementById('mobileMenuBtn');
+const navbar = document.querySelector('.nav-menu');
+const lineOne = document.querySelector('.line-one');
+const lineTwo = document.querySelector('.line-two');
+const lineThree = document.querySelector('.line-three');
+
+
+tombolMenu.addEventListener('click', () => {
+  navbar.classList.toggle('active');
+  lineOne.classList.toggle('active');
+  lineTwo.classList.toggle('active');
+  lineThree.classList.toggle('active');
+});
+
+document.addEventListener('click', (e) => {
+  if (navbar && !navbar.contains(e.target) && !tombolMenu.contains(e.target)) {
+    navbar.classList.remove('active');
+  }
+});
+
+const collectionBtn = document.querySelector('.tombol-home');
+collectionBtn.addEventListener('click', () => {
+  window.location.href = "#products"
+});
+
 // Search functionality
-searchInput.addEventListener('input', function () {
+searchInput.addEventListener('input', function() {
   const searchTerm = this.value.toLowerCase();
   const filteredProducts = products.filter(product =>
     product.name.toLowerCase().includes(searchTerm) ||
@@ -16,11 +41,6 @@ function initializeDarkMode() {
     document.documentElement.classList.add('dark');
   }
 }
-
-// Mobile menu toggle
-mobileMenuBtn.addEventListener('click', function () {
-  mobileMenu.classList.toggle('hidden');
-});
 
 // Contact product
 function contactProduct(productName, price) {
@@ -40,7 +60,7 @@ function addToWishlist(productId) {
 function validateForm() {
   const requiredFields = ['name', 'email', 'phone', 'subject', 'message'];
   let isValid = true;
-
+  
   requiredFields.forEach(field => {
     const input = document.getElementById(field);
     if (!input.value.trim()) {
@@ -50,11 +70,11 @@ function validateForm() {
       input.classList.remove('border-red-500');
     }
   });
-
+  
   if (!isValid) {
     alert('Mohon lengkapi semua field yang diperlukan!');
   }
-
+  
   return isValid;
 }
 
@@ -77,9 +97,9 @@ function showSuccessMessage(message) {
   const notification = document.createElement('div');
   notification.className = 'fixed top-20 right-4 z-50 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg animate-fade-in';
   notification.textContent = message;
-
+  
   document.body.appendChild(notification);
-
+  
   setTimeout(() => {
     notification.remove();
   }, 3000);
@@ -87,7 +107,7 @@ function showSuccessMessage(message) {
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
+  anchor.addEventListener('click', function(e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
@@ -98,15 +118,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Close mobile menu when clicking on links
-document.querySelectorAll('#mobileMenu a').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
-  });
-});
-
 // Add scroll effect to navigation
-window.addEventListener('scroll', function () {
+window.addEventListener('scroll', function() {
   const nav = document.querySelector('nav');
   if (window.scrollY > 50) {
     nav.classList.add('backdrop-blur-xl');

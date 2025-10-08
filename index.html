@@ -4,17 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FrostStyle - Koleksi Card Premium</title>
-
+  <title>FrostStyle</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
+  
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -24,33 +22,25 @@
   <nav class="nav-navbar">
     <div class="nav-container">
       <div class="nav-wrapper">
-        <div class="nav-brand">FrostStyle</div>
-
+        <div class="nav-brand">Danny§</div>
+        
         <div class="nav-menu">
           <a href="#home" class="nav-link"><i class="fas fa-house"></i> Beranda</a>
           <a href="#products" class="nav-link"><i class="fa-solid fa-box-open"></i> Produk</a>
           <a href="#tentang" class="nav-link"><i class="fa-solid fa-circle-info"></i> Tentang</a>
           <a href="#kontak" class="nav-link"><i class="fa-solid fa-envelope"></i> Kontak</a>
         </div>
-
+        
         <!-- Mobile Menu Button -->
         <button id="mobileMenuBtn" class="nav-mobile-btn">
-          <svg class="nav-mobile-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
+          <span class="line-one"></span>
+          <span class="line-two"></span>
+          <span class="line-three"></span>
         </button>
       </div>
     </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="nav-mobile-menu">
-      <a href="#home" class="nav-mobile-link">Home</a>
-      <a href="#products" class="nav-mobile-link">Produk</a>
-      <a href="#tentang" class="nav-mobile-link">Tentang</a>
-      <a href="#contact" class="nav-mobile-link">Kontak</a>
-    </div>
   </nav>
-
+  
   <!-- Hero Section -->
   <section id="home" class="halaman-home">
     <div class="kontainer-home">
@@ -65,7 +55,7 @@
           <span class="tombol-home-teks">Jelajahi Koleksi</span>
         </button>
       </div>
-
+      
       <div class="kartu-koleksi-home from-bottom">
         <!-- Card 1 -->
         <div class="kartu-home delay-0">
@@ -73,21 +63,21 @@
           <h3 class="judul-kartu">Fashion</h3>
           <p class="deskripsi-kartu">Trendy & Stylish</p>
         </div>
-
+        
         <!-- Card 2 -->
         <div class="kartu-home delay-1">
           <span class="ikon-kartu">⌚</span>
           <h3 class="judul-kartu">Aksesoris</h3>
           <p class="deskripsi-kartu">Jam & Perhiasan</p>
         </div>
-
+        
         <!-- Card 3 -->
         <div class="kartu-home delay-2">
           <span class="ikon-kartu">👜</span>
           <h3 class="judul-kartu">Bags</h3>
           <p class="deskripsi-kartu">Elegan & Praktis</p>
         </div>
-
+        
         <!-- Card 4 -->
         <div class="kartu-home delay-3">
           <span class="ikon-kartu">👟</span>
@@ -97,30 +87,29 @@
       </div>
     </div>
   </section>
-
+  
   <!-- Search Section -->
   <section class="halaman-cari">
     <div class="kontainer-cari">
       <div class="bungkus-cari from-bottom">
         <input type="text" id="searchInput" placeholder="Cari produk card..." class="input-cari">
         <svg class="ikon-cari" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
         </svg>
       </div>
     </div>
   </section>
-
+  
   <!-- Products Section -->
   <section id="products" class="halaman-produk">
     <div class="kontainer-produk">
-
+      
       <!-- Heading -->
       <div class="judul-produk">
         <h2 class="judul-home from-bottom">Koleksi <span class="teks-gradient-home">Produk</span></h2>
         <p class="deskripsi-teks from-bottom">Pilihan terbaik card premium untuk koleksi Anda</p>
       </div>
-
+      
       <!-- Category Filter -->
       <div class="filter-produk">
         <div class="from-bottom">
@@ -141,9 +130,9 @@
         <div class="from-bottom">
         </div>
       </div>
-
+      
       <div id="productsGrid" class="grid-produk">
-
+        
         <div class="from-bottom">
           <div class="kartu-produk" data-category="pokemon">
             <img src="assets/img-1.jpeg" alt="Charizard VMAX" class="gambar-produk">
@@ -160,7 +149,7 @@
             </div>
           </div>
         </div>
-
+        
         <div class="from-bottom">
           <div class="kartu-produk" data-category="pokemon">
             <img src="assets/img-2.jpeg" alt="Charizard VMAX" class="gambar-produk">
@@ -177,7 +166,7 @@
             </div>
           </div>
         </div>
-
+        
         <div class="from-bottom">
           <div class="kartu-produk" data-category="pokemon">
             <img src="assets/img-3.jpeg" alt="Charizard VMAX" class="gambar-produk">
@@ -194,7 +183,7 @@
             </div>
           </div>
         </div>
-
+        
         <div class="from-bottom">
           <div class="kartu-produk" data-category="pokemon">
             <img src="assets/img-4.jpeg" alt="Charizard VMAX" class="gambar-produk">
@@ -211,12 +200,12 @@
             </div>
           </div>
         </div>
-
+        
       </div>
     </div>
   </section>
-
-
+  
+  
   <!-- About Section -->
   <section id="tentang">
     <div class="kontainer-tentang">
@@ -273,7 +262,7 @@
       </div>
     </div>
   </section>
-
+  
   <!-- Contact Section -->
   <section id="kontak">
     <div class="kontainer-kontak">
@@ -281,7 +270,7 @@
         <h2 class="judul-kontak from-bottom">Hubungi<span class="teks-gradient-home"> Kami</span></h2>
         <p class="subjudul-kontak from-bottom">Punya pertanyaan? Kami siap membantu Anda!</p>
       </div>
-
+      
       <div class="kotak-form">
         <form id="formKontak" class="formulir">
           <div class="grid-dua">
@@ -294,12 +283,12 @@
               <input type="email" id="email" name="email" required class="input-form">
             </div>
           </div>
-
+          
           <div class="from-bottom">
             <label for="telepon" class="label-form">Nomor Telepon</label>
             <input type="tel" id="telepon" name="telepon" required class="input-form">
           </div>
-
+          
           <div class="from-bottom">
             <label for="subjek" class="label-form">Subjek</label>
             <select id="subjek" name="subjek" required class="select-form">
@@ -311,12 +300,12 @@
               <option value="Lainnya">Lainnya</option>
             </select>
           </div>
-
+          
           <div class="from-bottom">
             <label for="pesan" class="label-form">Pesan</label>
             <textarea id="pesan" name="pesan" rows="5" required class="textarea-form"></textarea>
           </div>
-
+          
           <div class="tombol-grup">
             <div class="from-bottom" style="width: 100%;">
               <button type="submit" id="tombolWa" class="tombol wa">
@@ -357,13 +346,13 @@
       </div>
     </div>
   </section>
-
-
+  
+  
   <!-- Footer -->
   <footer class="ft">
     <div class="kt">
       <div class="gd">
-
+        
         <!-- Brand -->
         <div class="kol2">
           <div class="jd from-bottom">FrostStyle</div>
@@ -385,7 +374,7 @@
             </a>
           </div>
         </div>
-
+        
         <!-- Kategori -->
         <div class="kol1">
           <h3 class="jk from-bottom">Kategori</h3>
@@ -396,7 +385,7 @@
             <li class="from-bottom"><a href="#products">Audio & Video</a></li>
           </ul>
         </div>
-
+        
         <!-- Bantuan -->
         <div class="kol1">
           <h3 class="jk from-bottom">Bantuan</h3>
@@ -408,13 +397,13 @@
           </ul>
         </div>
       </div>
-
+      
       <div class="gr from-bottom">
         <p>&copy; 2025 FrostStyle. Semua hak cipta dilindungi. | Dibuat dengan ❤️ di Indonesia</p>
       </div>
     </div>
   </footer>
-
+  
   <script src="script.js"></script>
 </body>
 
