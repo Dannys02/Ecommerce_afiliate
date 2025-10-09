@@ -34,14 +34,6 @@ searchInput.addEventListener('input', function() {
   displayProducts(filteredProducts);
 });
 
-// Dark mode functionality
-function initializeDarkMode() {
-  const isDarkMode = localStorage.getItem('darkMode') === 'true';
-  if (isDarkMode) {
-    document.documentElement.classList.add('dark');
-  }
-}
-
 // Contact product
 function contactProduct(productName, price) {
   const message = `Halo! Saya tertarik dengan produk ${productName} seharga ${price}. Bisakah Anda memberikan informasi lebih lanjut?`;
@@ -93,7 +85,6 @@ function resetForm() {
 }
 
 function showSuccessMessage(message) {
-  // Create and show success notification
   const notification = document.createElement('div');
   notification.className = 'fixed top-20 right-4 z-50 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg animate-fade-in';
   notification.textContent = message;
@@ -104,29 +95,6 @@ function showSuccessMessage(message) {
     notification.remove();
   }, 3000);
 }
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  });
-});
-
-// Add scroll effect to navigation
-window.addEventListener('scroll', function() {
-  const nav = document.querySelector('nav');
-  if (window.scrollY > 50) {
-    nav.classList.add('backdrop-blur-xl');
-  } else {
-    nav.classList.remove('backdrop-blur-xl');
-  }
-});
 
 const elements = document.querySelectorAll(".from-bottom");
 

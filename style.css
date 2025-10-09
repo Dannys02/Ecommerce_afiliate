@@ -12,6 +12,10 @@ body {
     font-style: normal;
 }
 
+.from-bottom {
+    position: relative;
+}
+
 .nav-navbar {
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
@@ -174,7 +178,7 @@ body {
     }
     
     .line-one.active {
-        transform: rotate(-50deg) translateY(12px);
+        transform: rotate(-45deg) translateY(8px);
         width: 100%;
     }
     
@@ -184,20 +188,24 @@ body {
     }
     
     .line-three.active {
-        transform: rotate(50deg) translateY(-12px);
+        transform: rotate(45deg) translateY(-8px);
         width: 100%;
     }
     
     .nav-link i {
         opacity: 1;
         color: white !important;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover i {
+        color: #2563eb !important;
     }
     
     .nav-mobile-btn {
         display: flex;
         flex-direction: column;
     }
-    
 }
 
 /* Home */
@@ -677,9 +685,16 @@ body {
     width: 20rem;
     height: 20rem;
     background: linear-gradient(to bottom right, #60A5FA, #8B5CF6);
-    border-radius: 1.5rem;
+    border-radius: 50%;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     animation: melayang 6s ease-in-out infinite;
+}
+
+.kotak-besar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .kotak-kuning {
@@ -689,7 +704,7 @@ body {
     width: 8rem;
     height: 8rem;
     background: linear-gradient(to bottom right, #FACC15, #F97316);
-    border-radius: 1rem;
+    border-radius: 50%;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
     animation: melayang 6s ease-in-out infinite;
     animation-delay: 1s;
@@ -697,12 +712,12 @@ body {
 
 .kotak-hijau {
     position: absolute;
-    bottom: -2rem;
-    left: -2rem;
+    bottom: 1rem;
+    left: -1rem;
     width: 6rem;
     height: 6rem;
     background: linear-gradient(to bottom right, #34D399, #3B82F6);
-    border-radius: 0.75rem;
+    border-radius: 50%;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     animation: melayang 6s ease-in-out infinite;
     animation-delay: 2s;
@@ -777,6 +792,7 @@ body {
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 2rem;
+    margin-inline: 80px;
 }
 
 .formulir {
@@ -785,13 +801,11 @@ body {
     gap: 1.5rem;
 }
 
-.grid-dua {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
 @media (max-width: 768px) {
+    .kotak-form {
+        margin-inline: 0;
+    }
+    
     .grid-dua {
         grid-template-columns: 1fr 1fr;
     }
@@ -819,13 +833,12 @@ body {
     outline: none;
 }
 
-/*.input-form:focus,
-.select-form:focus,
-.textarea-form:focus {
-    outline: none;
-    border-color: transparent;
-    box-shadow: 0 0 0 2px #3B82F6;
-}*/
+.input-form::placeholder,
+.select-form::placeholder,
+.textarea-form::placeholder {
+    color: white;
+}
+
 
 .textarea-form {
     resize: none;
@@ -891,15 +904,26 @@ body {
 }
 
 .gd {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
+    padding-left: 30px;
+}
+
+.kol2 {
+    max-width: 40rem;
 }
 
 @media(max-width:768px) {
     .gd {
-        grid-template-columns: 1fr;
+        align-items: start;
+        padding-left: 0;
     }
+}
+
+.kol1,
+.kol2 {
+    width: fit-content !important;
 }
 
 .jd {
@@ -929,45 +953,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color .3s;
+    background: #60a5fa;
+    text-decoration: none;
 }
 
 .sv {
     width: 1.25rem;
     height: 1.25rem;
     fill: currentColor;
-}
-
-.biru {
-    background: #2563eb;
-}
-
-.biru:hover {
-    background: #1e40af;
-}
-
-.birut {
-    background: #1e3a8a;
-}
-
-.birut:hover {
-    background: #1e3a8a;
-}
-
-.pink {
-    background: #db2777;
-}
-
-.pink:hover {
-    background: #be185d;
-}
-
-.merah {
-    background: #dc2626;
-}
-
-.merah:hover {
-    background: #b91c1c;
 }
 
 .jk {
