@@ -5,6 +5,99 @@
     scroll-behavior: smooth;
 }
 
+/* === LOADING SCREEN === */
+#loadingScreen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.85);
+    /* warna gelap transparan */
+    z-index: 9999;
+    backdrop-filter: blur(10px);
+    transition: opacity 0.4s ease;
+}
+
+#loadingScreen .spinner-border {
+    width: 4rem;
+    height: 4rem;
+}
+
+.loading-text {
+    margin-top: 1rem;
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+/* Saat konten diblur */
+body.loading-active main,
+body.loading-active section,
+body.loading-active nav,
+body.loading-active footer {
+    filter: blur(8px);
+    pointer-events: none;
+    user-select: none;
+}
+
+/* 404 ERROR PAGE */
+#errorPage {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #0f172a;
+    color: white;
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#errorPage.active {
+    display: flex;
+}
+
+.error-container i {
+    font-size: 4rem;
+    color: #ef4444;
+    margin-bottom: 1rem;
+}
+
+.error-container h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.error-container p {
+    font-size: 1.125rem;
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+}
+
+.error-container button {
+    background: linear-gradient(to right, #2563eb, #9333ea);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.error-container button:hover {
+    transform: scale(1.05);
+}
+
+html,
+body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+}
+
 body {
     background: linear-gradient(135deg, #0f172a, #312e81, #1e3a8a);
     font-family: "Poppins", sans-serif;
@@ -16,9 +109,9 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
     position: fixed;
-    top: 1.5rem;
+    top: 1rem;
     left: 50%;
-    width: 90%;
+    width: 95%;
     border-radius: 50px;
     transform: translateX(-50%);
     z-index: 50;
@@ -168,36 +261,36 @@ body {
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
         transition: top 0.3s ease-in-out;
     }
-    
+
     .nav-menu.active {
         top: 100%;
     }
-    
+
     .line-one.active {
         transform: rotate(-45deg) translateY(8px);
         width: 100%;
     }
-    
+
     .line-two.active {
         width: 0;
         opacity: 0;
     }
-    
+
     .line-three.active {
         transform: rotate(45deg) translateY(-8px);
         width: 100%;
     }
-    
+
     .nav-link i {
         opacity: 1;
         color: white !important;
         transition: all 0.3s ease;
     }
-    
+
     .nav-link:hover i {
         color: #2563eb !important;
     }
-    
+
     .nav-mobile-btn {
         display: flex;
         flex-direction: column;
@@ -291,7 +384,7 @@ body {
     .kartu-koleksi-home {
         flex-direction: column;
     }
-    
+
     .kartu-home {
         width: 20rem !important;
     }
@@ -365,12 +458,12 @@ body {
 }
 
 @keyframes mengambang {
-    
+
     0%,
     100% {
         transform: translateY(0);
     }
-    
+
     50% {
         transform: translateY(-10px);
     }
@@ -495,7 +588,7 @@ body {
 
 .kartu-produk {
     background: rgba(0, 0, 0, 0.10);
-    backdrop-filter: blur(20px);
+    /* backdrop-filter: blur(20px); */
     border: 1px solid #9333ea;
     border-radius: 1rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -686,12 +779,17 @@ body {
 }
 
 .kotak-besar {
+    position: relative;
     width: 20rem;
     height: 20rem;
     background: linear-gradient(to bottom right, #60A5FA, #8B5CF6);
     border-radius: 50%;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     animation: melayang 6s ease-in-out infinite;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .kotak-besar img {
@@ -699,15 +797,59 @@ body {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
+
+    position: relative;
+    z-index: 2;
 }
 
+/* 🔥 Efek lingkaran warna-warni neon di sekitar gambar */
+.animasi-lingkaran {
+    position: absolute;
+    width: 101%;
+    height: 101%;
+    border-radius: 50%;
+    background: conic-gradient(#ff0000,
+            #ff9900,
+            #ffff00,
+            #00ff00,
+            #00ffff,
+            #0000ff,
+            #ff00ff,
+            #ff0000);
+    animation: putar 4s linear infinite;
+    filter: blur(6px) brightness(1.2);
+    z-index: 1;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Buat tengahnya transparan agar hanya garisnya terlihat */
+.animasi-lingkaran::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    background: radial-gradient(circle at center, #0f172a 80%, transparent 100%);
+    border-radius: 50%;
+}
+
+/* Animasi berputar */
+@keyframes putar {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
 @keyframes melayang {
-    
+
     0%,
     100% {
         transform: translateY(0);
     }
-    
+
     50% {
         transform: translateY(-15px);
     }
@@ -730,7 +872,7 @@ body {
         transform: translateY(20px);
         opacity: 0;
     }
-    
+
     100% {
         transform: translateY(0);
         opacity: 1;
@@ -783,7 +925,7 @@ body {
     .kotak-form {
         margin-inline: 0;
     }
-    
+
     .grid-dua {
         grid-template-columns: 1fr 1fr;
     }
@@ -972,4 +1114,57 @@ body {
     text-align: center;
     color: #9ca3af;
     font-size: .875rem;
+}
+
+/* Modal contact */
+.modal-sukses {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.6);
+    z-index: 9999;
+    opacity: 0;
+    transform: scale(0.6);
+    transition: all 0.3s ease;
+}
+
+.modal-sukses.tampil {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.isi-modal {
+    background: linear-gradient(135deg, #1e3a8a, #312e81);
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transform: scale(0.8);
+    animation: zoomMasuk 0.4s ease forwards;
+}
+
+.ikon-sukses {
+    font-size: 3rem;
+    color: #22c55e;
+    margin-bottom: 1rem;
+}
+
+.teks-sukses {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+@keyframes zoomMasuk {
+    from {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }

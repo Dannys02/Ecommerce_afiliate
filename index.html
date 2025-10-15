@@ -5,27 +5,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CoolStyle</title>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <!-- LOADING SCREEN -->
+  <div id="loadingScreen">
+    <div class="spinner-border text-light" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <p class="loading-text">Memuat halaman...</p>
+  </div>
+
+  <!-- 404 ERROR PAGE -->
+  <div id="errorPage">
+    <div class="error-container">
+      <i class="fas fa-wifi-slash"></i>
+      <h1>404 / Tidak Ada Koneksi</h1>
+      <p>Sepertinya kamu sedang offline atau halaman ini tidak dapat diakses.</p>
+      <button onclick="location.reload()">Coba Lagi</button>
+    </div>
+  </div>
+
   <nav class="nav-navbar">
     <div class="nav-container">
       <div class="nav-wrapper">
         <div class="nav-brand">CoolStyle</div>
-        
+
         <div class="nav-menu">
           <a href="#home" class="nav-link"><i class="fas fa-house"></i> Beranda</a>
           <a href="#products" class="nav-link"><i class="fa-solid fa-box-open"></i> Produk</a>
           <a href="#tentang" class="nav-link"><i class="fa-solid fa-circle-info"></i> Tentang</a>
           <a href="#kontak" class="nav-link"><i class="fa-solid fa-envelope"></i> Kontak</a>
         </div>
-        
+
         <button id="mobileMenuBtn" class="nav-mobile-btn">
           <span class="line-one"></span>
           <span class="line-two"></span>
@@ -34,7 +55,7 @@
       </div>
     </div>
   </nav>
-  
+
   <!-- Hero Section -->
   <section id="home" class="halaman-home">
     <div class="kontainer-home">
@@ -43,84 +64,86 @@
           Koleksi <span class="teks-gradient-home">Kami</span>
         </h1>
         <p class="subjudul-home">
-          Rekomendasi Produk Viral dari Shopee & TikTok Shop. Kami bantu kamu temukan produk terbaik dengan harga paling hemat!
+          Rekomendasi Produk Viral dari Shopee & TikTok Shop. Kami bantu kamu temukan produk terbaik dengan harga paling
+          hemat!
         </p>
         <button class="tombol-home">
           <span class="tombol-home-teks">Jelajahi Koleksi</span>
         </button>
       </div>
-      
+
       <div class="kartu-koleksi-home from-bottom">
         <div class="kartu-home delay-0">
           <span class="ikon-kartu"><i class="fa-solid fa-gem"></i></span>
           <h3 class="judul-kartu">Aksesoris</h3>
           <p class="deskripsi-kartu">Trendi & unik</p>
         </div>
-        
+
         <div class="kartu-home delay-1">
           <span class="ikon-kartu"><i class="fa-solid fa-utensils"></i></span>
           <h3 class="judul-kartu">Makanan</h3>
           <p class="deskripsi-kartu">Viral & enak</p>
         </div>
-        
+
         <div class="kartu-home delay-2">
           <span class="ikon-kartu"><i class="fa-solid fa-gamepad"></i></span>
           <h3 class="judul-kartu">Laptop</h3>
           <p class="deskripsi-kartu">Kuat & terjangkau</p>
         </div>
-        
+
         <div class="kartu-home delay-3">
           <span class="ikon-kartu"><i class="fa-solid fa-headphones"></i></span>
           <h3 class="judul-kartu">Audio</h3>
           <p class="deskripsi-kartu">Jernih & stylish</p>
         </div>
-        
+
       </div>
     </div>
   </section>
-  
+
   <section class="halaman-cari">
     <div class="kontainer-cari">
       <div class="bungkus-cari from-bottom">
         <input type="text" id="searchInput" placeholder="Cari produk card..." class="input-cari">
         <svg class="ikon-cari" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
         </svg>
       </div>
     </div>
   </section>
-  
+
   <!-- Products Section -->
   <section id="products" class="halaman-produk">
     <div class="kontainer-produk">
-      
+
       <div class="judul-produk">
         <h2 class="judul-home from-bottom">Koleksi <span class="teks-gradient-home">Produk</span></h2>
         <p class="deskripsi-teks from-bottom">Pilihan terbaik produk berkualitas untuk koleksi Anda</p>
       </div>
-      
+
       <div class="filter-produk">
         <div class="from-bottom">
-          <button onclick="filterProducts('all')" class="tombol-filter aktif">Semua</button>
+          <button onclick="filterProducts('semua')" class="tombol-filter aktif">Semua</button>
         </div>
         <div class="from-bottom">
-          <button onclick="filterProducts('pokemon')" class="tombol-filter">Aksesoris mode</button>
+          <button onclick="filterProducts('Aksesoris mode')" class="tombol-filter">Aksesoris mode</button>
         </div>
         <div class="from-bottom">
           <button onclick="filterProducts('Makanan & Minuman')" class="tombol-filter">Makanan & Minuman</button>
         </div>
         <div class="from-bottom">
-          <button onclick="filterProducts('mtg')" class="tombol-filter">Laptop gaming</button>
+          <button onclick="filterProducts('Laptop gaming')" class="tombol-filter">Laptop gaming</button>
         </div>
         <div class="from-bottom">
-          <button onclick="filterProducts('limited')" class="tombol-filter">Audio & Video</button>
+          <button onclick="filterProducts('Audio & Video')" class="tombol-filter">Audio & Video</button>
         </div>
         <div class="from-bottom">
         </div>
       </div>
-      
+
       <div id="productsGrid" class="grid-produk">
-        
+
         <div class="from-bottom">
           <div class="kartu-produk" data-category="Makanan & Minuman">
             <img src="assets/img-1.jpeg" alt="Charizard VMAX" class="gambar-produk">
@@ -137,7 +160,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="from-bottom">
           <div class="kartu-produk" data-category="Makanan & Minuman">
             <img src="assets/img-2.jpeg" alt="Charizard VMAX" class="gambar-produk">
@@ -154,7 +177,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="from-bottom">
           <div class="kartu-produk" data-category="Makanan & Minuman">
             <img src="assets/img-3.jpeg" alt="Charizard VMAX" class="gambar-produk">
@@ -171,7 +194,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="from-bottom">
           <div class="kartu-produk" data-category="Makanan & Minuman">
             <img src="assets/img-4.jpeg" alt="Charizard VMAX" class="gambar-produk">
@@ -188,11 +211,11 @@
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
   </section>
-  
+
   <!-- About Section -->
   <section id="tentang">
     <div class="kontainer-tentang">
@@ -201,7 +224,8 @@
           <h2 class="judul-tentang">Tentang <span class="teks-gradient-home">CoolStyle</span></h2>
           <p class="paragraf-tentang">
             CoolStyle adalah platform rekomendasi produk pilihan dari berbagai brand terpercaya di Shopee & TikTok Shop.
-            Kami membantu Anda menemukan barang berkualitas dengan harga terbaik — cukup klik dan beli lewat link resmi kami.
+            Kami membantu Anda menemukan barang berkualitas dengan harga terbaik — cukup klik dan beli lewat link resmi
+            kami.
           </p>
           <div class="list-tentang">
             <div class="item-tentang">
@@ -236,10 +260,11 @@
             </div>
           </div>
         </div>
-        
+
         <div class="gambar-tentang">
           <div class="bungkus-gambar">
             <div class="kotak-besar">
+              <div class="animasi-lingkaran"></div>
               <img src="assets/Main-Images-About.png" alt="Logo">
             </div>
           </div>
@@ -247,7 +272,7 @@
       </div>
     </div>
   </section>
-  
+
   <!-- Contact Section -->
   <section id="kontak">
     <div class="kontainer-kontak">
@@ -257,7 +282,7 @@
           Ada pertanyaan seputar rekomendasi produk, kerja sama, atau ide kolaborasi? Kami siap mendengarkan!
         </p>
       </div>
-      
+
       <div class="kotak-form">
         <form id="formKontak" class="formulir">
           <div class="from-bottom">
@@ -266,21 +291,21 @@
           <div class="from-bottom">
             <input type="email" id="email" name="email" placeholder="Email" required class="input-form">
           </div>
-          
+
           <div class="from-bottom">
             <select id="subjek" name="subjek" required class="select-form">
-              <option value="">Pilih Topik</option>
-              <option value="Kerja Sama">Kerja Sama</option>
-              <option value="Pertanyaan Produk">Pertanyaan Produk</option>
-              <option value="Saran / Masukan">Saran / Masukan</option>
-              <option value="Lainnya">Lainnya</option>
+              <option style="color: black !important;" value="">Pilih Topik</option>
+              <option style="color: black !important;" value="Kerja Sama">Kerja Sama</option>
+              <option style="color: black !important;" value="Pertanyaan Produk">Pertanyaan Produk</option>
+              <option style="color: black !important;" value="Saran / Masukan">Saran / Masukan</option>
+              <option style="color: black !important;" value="Lainnya">Lainnya</option>
             </select>
           </div>
-          
+
           <div class="from-bottom">
             <textarea id="pesan" name="pesan" rows="5" placeholder="Pesan" required class="textarea-form"></textarea>
           </div>
-          
+
           <div class="tombol-grup">
             <div class="from-bottom" style="width: 100%;">
               <button type="submit" id="tombolWa" class="tombol wa">
@@ -299,14 +324,14 @@
       </div>
     </div>
   </section>
-  
-  
-  
+
+
+
   <!-- Footer -->
   <footer class="ft">
     <div class="kt">
       <div class="gd">
-        
+
         <div class="kol2">
           <div class="jd from-bottom">CoolStyle</div>
           <p class="ds from-bottom">
@@ -327,7 +352,7 @@
             </a>
           </div>
         </div>
-        
+
         <div class="kol1">
           <h3 class="jk from-bottom">Kategori</h3>
           <ul class="dl">
@@ -337,25 +362,25 @@
             <li class="from-bottom"><a href="#products">Audio & Video</a></li>
           </ul>
         </div>
-        
+
         <div class="kol1">
           <h3 class="jk from-bottom">Informasi</h3>
           <ul class="dl">
             <li class="from-bottom"><a href="#tentang">Tentang CoolStyle</a></li>
-            <li class="from-bottom"><a href="#">Kebijakan Afiliasi</a></li>
-            <li class="from-bottom"><a href="#">Privasi & Cookie</a></li>
+            <li class="from-bottom"><a href="kebijakan-afiliasi.html">Kebijakan Afiliasi</a></li>
+            <li class="from-bottom"><a href="privasi-cookie.html">Privasi & Cookie</a></li>
             <li class="from-bottom"><a href="#kontak">Hubungi Kami</a></li>
           </ul>
-          
+
         </div>
       </div>
-      
+
       <div class="gr from-bottom">
         <p>&copy; 2025 CoolStyle. Semua hak cipta dilindungi.</p>
       </div>
     </div>
   </footer>
-  
+
   <script src="script.js"></script>
 </body>
 

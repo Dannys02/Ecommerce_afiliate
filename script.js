@@ -1,3 +1,40 @@
+// LOADING SCREEN
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loadingScreen");
+  document.body.classList.add("loading-active");
+
+  // Simulasikan durasi loading (misal 2,5 detik)
+  setTimeout(() => {
+    loader.style.opacity = "0";
+    document.body.classList.remove("loading-active");
+    setTimeout(() => loader.remove(), 400);
+  }, 1500);
+});
+
+// 404 / OFFLINE CHECK
+function checkConnection() {
+  const errorPage = document.getElementById("errorPage");
+  const mainBody = document.body;
+
+  if (!navigator.onLine) {
+    errorPage.classList.add("active");
+    // Sembunyikan semua isi halaman
+    const semuaElemen = document.querySelectorAll("nav, section, footer");
+    semuaElemen.forEach(el => el.style.display = "none");
+  } else {
+    errorPage.classList.remove("active");
+    const semuaElemen = document.querySelectorAll("nav, section, footer");
+    semuaElemen.forEach(el => el.style.display = "");
+  }
+}
+
+// Jalankan saat load dan saat status koneksi berubah
+window.addEventListener("load", checkConnection);
+window.addEventListener("online", checkConnection);
+window.addEventListener("offline", checkConnection);
+
+
+
 const tombolMenu = document.getElementById('mobileMenuBtn');
 const navbar = document.querySelector('.nav-menu');
 const lineOne = document.querySelector('.line-one');
@@ -17,79 +54,131 @@ collectionBtn.addEventListener('click', () => {
   window.location.href = "#products"
 });
 
-// Search functionality
-searchInput.addEventListener('input', function() {
-  const searchTerm = this.value.toLowerCase();
-  const filteredProducts = products.filter(product =>
-    product.name.toLowerCase().includes(searchTerm) ||
-    product.category.toLowerCase().includes(searchTerm) ||
-    product.description.toLowerCase().includes(searchTerm)
-  );
-  displayProducts(filteredProducts);
-});
+// Cari produk via button
+function filterProducts(category) {
+  const products = document.querySelectorAll('.kartu-produk');
+  const buttons = document.querySelectorAll('.tombol-filter');
 
-// Contact product
-function contactProduct(productName, price) {
-  const message = `Halo! Saya tertarik dengan produk ${productName} seharga ${price}. Bisakah Anda memberikan informasi lebih lanjut?`;
-  const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
-  window.open(whatsappUrl, '_blank');
-}
-
-// Add to wishlist
-function addToWishlist(productId) {
-  // In a real app, this would save to database
-  alert('Produk berhasil ditambahkan ke wishlist!');
-}
-
-
-
-function validateForm() {
-  const requiredFields = ['name', 'email', 'phone', 'subject', 'message'];
-  let isValid = true;
-  
-  requiredFields.forEach(field => {
-    const input = document.getElementById(field);
-    if (!input.value.trim()) {
-      input.classList.add('border-red-500');
-      isValid = false;
-    } else {
-      input.classList.remove('border-red-500');
+  // Ganti status tombol aktif
+  buttons.forEach(btn => {
+    btn.classList.remove('aktif');
+    if (btn.getAttribute('onclick').includes(category)) {
+      btn.classList.add('aktif');
     }
   });
-  
-  if (!isValid) {
-    alert('Mohon lengkapi semua field yang diperlukan!');
+
+  // Tampilkan / sembunyikan produk sesuai kategori
+  products.forEach(product => {
+    const productCategory = product.getAttribute('data-category');
+    if (category === 'semua' || productCategory === category) {
+      product.parentElement.style.display = 'block'; // parent karena .from-bottom
+    } else {
+      product.parentElement.style.display = 'none';
+    }
+  });
+}
+
+// Contact Products
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("formKontak");
+  const tombolWa = document.getElementById("tombolWa");
+  const tombolEmail = document.getElementById("tombolEmail");
+
+  const nomorWA = "6281234567890"; // Ganti sesuai nomor kamu
+  const emailTujuan = "coolstyle@gmail.com"; // Ganti sesuai email kamu
+
+  function ambilDataForm() {
+    return {
+      nama: document.getElementById("nama").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      subjek: document.getElementById("subjek").value.trim(),
+      pesan: document.getElementById("pesan").value.trim(),
+    };
   }
-  
-  return isValid;
-}
 
-function getFormData() {
-  return {
-    name: document.getElementById('name').value,
-    email: document.getElementById('email').value,
-    phone: document.getElementById('phone').value,
-    subject: document.getElementById('subject').value,
-    message: document.getElementById('message').value
-  };
-}
+  function validasi(data) {
+    return data.nama && data.email && data.subjek && data.pesan;
+  }
 
-function resetForm() {
-  contactForm.reset();
-}
+  // 🔹 Fungsi buat tampilkan modal sukses
+  function tampilkanModalSukses(teks = "Pesan berhasil dikirim!") {
+    // Buat elemen container modal
+    const modal = document.createElement("div");
+    modal.className = "modal-sukses";
 
-function showSuccessMessage(message) {
-  const notification = document.createElement('div');
-  notification.className = 'fixed top-20 right-4 z-50 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg animate-fade-in';
-  notification.textContent = message;
-  
-  document.body.appendChild(notification);
-  
-  setTimeout(() => {
-    notification.remove();
-  }, 3000);
-}
+    // Isi modal (ikon + teks)
+    modal.innerHTML = `
+      <div class="isi-modal">
+        <div class="ikon-sukses">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <p class="teks-sukses">${teks}</p>
+      </div>
+    `;
 
+    document.body.appendChild(modal);
+
+    // Tambahkan animasi zoom-in
+    setTimeout(() => {
+      modal.classList.add("tampil");
+    }, 10);
+
+    // Hapus otomatis setelah 3 detik
+    setTimeout(() => {
+      modal.classList.remove("tampil");
+      setTimeout(() => modal.remove(), 300);
+    }, 3000);
+  }
+
+  // === Tombol WhatsApp ===
+  tombolWa.addEventListener("click", (e) => {
+    e.preventDefault();
+    const data = ambilDataForm();
+
+    if (!validasi(data)) {
+      alert("Mohon lengkapi semua input sebelum mengirim pesan!");
+      return;
+    }
+
+    const teksPesan = `Halo CoolStyle! 👋%0A%0A` +
+      `Nama: ${data.nama}%0A` +
+      `Email: ${data.email}%0A` +
+      `Topik: ${data.subjek}%0A%0A` +
+      `Pesan:%0A${data.pesan}%0A%0A` +
+      `Dikirim dari Form Kontak Website CoolStyle`;
+
+    const waURL = `https://wa.me/${nomorWA}?text=${teksPesan}`;
+    window.open(waURL, "_blank");
+
+    tampilkanModalSukses();
+    form.reset();
+  });
+
+  // === Tombol Email ===
+  tombolEmail.addEventListener("click", (e) => {
+    e.preventDefault();
+    const data = ambilDataForm();
+
+    if (!validasi(data)) {
+      alert("Mohon lengkapi semua input sebelum mengirim email!");
+      return;
+    }
+
+    const subject = encodeURIComponent(`Pesan dari ${data.nama} - ${data.subjek}`);
+    const body = encodeURIComponent(
+      `Nama: ${data.nama}\nEmail: ${data.email}\nTopik: ${data.subjek}\n\nPesan:\n${data.pesan}`
+    );
+
+    const mailtoURL = `mailto:${emailTujuan}?subject=${subject}&body=${body}`;
+    // window.location.href = mailtoURL;
+
+    tampilkanModalSukses("Email berhasil disiapkan!");
+    form.reset();
+  });
+});
+
+
+// Animasi fade in top
 const elements = document.querySelectorAll(".from-bottom");
 
 const observer = new IntersectionObserver((entries) => {
