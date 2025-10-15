@@ -12,12 +12,6 @@ tombolMenu.addEventListener('click', () => {
   lineThree.classList.toggle('active');
 });
 
-document.addEventListener('click', (e) => {
-  if (navbar && !navbar.contains(e.target) && !tombolMenu.contains(e.target)) {
-    navbar.classList.remove('active');
-  }
-});
-
 const collectionBtn = document.querySelector('.tombol-home');
 collectionBtn.addEventListener('click', () => {
   window.location.href = "#products"
