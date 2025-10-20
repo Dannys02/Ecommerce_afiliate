@@ -5,11 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CoolStyle</title>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css">
 </head>
@@ -22,7 +24,7 @@
     </div>
     <p class="loading-text">Memuat halaman...</p>
   </div>
-  
+
   <!-- 404 ERROR PAGE -->
   <div id="errorPage">
     <div class="error-container">
@@ -34,19 +36,19 @@
       <button onclick="location.reload()">Coba Lagi</button>
     </div>
   </div>
-  
+
   <nav class="nav-navbar">
     <div class="nav-container">
       <div class="nav-wrapper">
         <div class="nav-brand">CoolStyle</div>
-        
+
         <div class="nav-menu">
           <a href="#home" class="nav-link"><i class="fas fa-house"></i> Beranda</a>
           <a href="#products" class="nav-link"><i class="fa-solid fa-box-open"></i> Produk</a>
           <a href="#tentang" class="nav-link"><i class="fa-solid fa-circle-info"></i> Tentang</a>
           <a href="#kontak" class="nav-link"><i class="fa-solid fa-envelope"></i> Kontak</a>
         </div>
-        
+
         <button id="mobileMenuBtn" class="nav-mobile-btn">
           <span class="line-one"></span>
           <span class="line-two"></span>
@@ -55,7 +57,7 @@
       </div>
     </div>
   </nav>
-  
+
   <!-- Hero Section -->
   <section id="home" class="halaman-home">
     <div class="kontainer-home">
@@ -71,63 +73,64 @@
           <span class="tombol-home-teks">Jelajahi Koleksi</span>
         </button>
       </div>
-      
+
       <div class="kartu-koleksi-home from-bottom">
         <div class="kartu-home delay-0">
           <span class="ikon-kartu"><i class="fa-solid fa-gem"></i></span>
           <h3 class="judul-kartu">Aksesoris</h3>
           <p class="deskripsi-kartu">Trendi & unik</p>
         </div>
-        
+
         <div class="kartu-home delay-1">
           <span class="ikon-kartu"><i class="fa-solid fa-utensils"></i></span>
           <h3 class="judul-kartu">Makanan</h3>
           <p class="deskripsi-kartu">Viral & enak</p>
         </div>
-        
+
         <div class="kartu-home delay-2">
           <span class="ikon-kartu"><i class="fa-solid fa-gamepad"></i></span>
           <h3 class="judul-kartu">Laptop</h3>
           <p class="deskripsi-kartu">Kuat & terjangkau</p>
         </div>
-        
+
         <div class="kartu-home delay-3">
           <span class="ikon-kartu"><i class="fa-solid fa-headphones"></i></span>
           <h3 class="judul-kartu">Audio</h3>
           <p class="deskripsi-kartu">Jernih & stylish</p>
         </div>
-        
+
       </div>
     </div>
   </section>
-  
+
   <section class="halaman-cari">
     <div class="kontainer-cari">
-      <button type="submit" id="searchBtn" class="search-btn from-bottom">
-        <svg class="ikon-cari" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-        </svg>
-        <span>Cari</span>
-      </button>
-      
       <div class="bungkus-cari from-bottom">
+        <button type="submit" id="searchBtn" class="search-btn from-bottom">
+          <svg class="ikon-cari" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </button>
+
         <input type="text" id="searchInput" placeholder="Cari produk card..." class="input-cari">
+        
         <button type="button" id="clearBtn" class="clear-btn">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
     </div>
   </section>
-  
+
   <!-- Products Section -->
   <section id="products" class="halaman-produk">
     <div class="kontainer-produk">
-      
+
       <div class="judul-produk">
         <h2 class="judul-home from-bottom">Koleksi <span class="teks-gradient-home">Produk</span></h2>
         <p class="deskripsi-teks from-bottom">Pilihan terbaik produk berkualitas untuk koleksi Anda</p>
       </div>
-      
+
       <div class="filter-produk">
         <div class="from-bottom">
           <button onclick="filterProducts('semua')" class="tombol-filter aktif">Semua</button>
@@ -147,7 +150,7 @@
         <div class="from-bottom">
         </div>
       </div>
-      
+
       <!-- Pesan hasil pencarian -->
       <div style="width: 100%; display: flex; justify-content: center;">
         <div id="noResultsMessage" class="pesan-tidak-ditemukan from-bottom" style="display: none;">
@@ -155,28 +158,30 @@
           <span>Produk yang Anda cari tidak ditemukan.</span>
         </div>
       </div>
-      
+
       <div id="productsGrid" class="grid-produk">
-        
+
         <!-- AKSESORIS MODE  -->
         <div class="from-bottom">
           <div class="kartu-produk" data-category="Aksesoris mode">
             <img src="assets/img-1-mode.png" alt="Charizard VMAX" class="gambar-produk">
             <div class="isi-kartu">
               <h3 class="judul-kartu">Kacamata Optik Anti Sunglass</h3>
-              <p class="deskripsi-kartu">Kacamata Wanita Pria Optik Anti Sunglass Dengan Fashion Sunglasses Kacamata Hitam Transparan Bening</p>
+              <p class="deskripsi-kartu">Kacamata Wanita Pria Optik Anti Sunglass Dengan Fashion Sunglasses Kacamata
+                Hitam Transparan Bening</p>
               <div class="info-kartu">
                 <span class="harga-produk">Rp 11.000</span>
                 <span class="label-produk">Aksesoris mode</span>
               </div>
               <div class="aksi-kartu">
-                <a href="https://vt.tokopedia.com/t/ZSHvYrtGauTj5-koxSh/" target="_blank" class="tombol-pesan">Beli Sekarang
+                <a href="https://vt.tokopedia.com/t/ZSHvYrtGauTj5-koxSh/" target="_blank" class="tombol-pesan">Beli
+                  Sekarang
                 </a>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="from-bottom">
           <div class="kartu-produk" data-category="Aksesoris mode">
             <img src="assets/img-2-mode.png" alt="Charizard VMAX" class="gambar-produk">
@@ -188,37 +193,41 @@
                 <span class="label-produk">Aksesoris mode</span>
               </div>
               <div class="aksi-kartu">
-                <a href="https://vt.tokopedia.com/t/ZSHvYh55Js6gt-vKwxw/" target="_blank" class="tombol-pesan">Beli Sekarang
+                <a href="https://vt.tokopedia.com/t/ZSHvYh55Js6gt-vKwxw/" target="_blank" class="tombol-pesan">Beli
+                  Sekarang
                 </a>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="from-bottom">
           <div class="kartu-produk" data-category="Aksesoris mode">
             <img src="assets/img-3-mode.png" alt="Charizard VMAX" class="gambar-produk">
             <div class="isi-kartu">
               <h3 class="judul-kartu">Kacamata Double Fokus</h3>
-              <p class="deskripsi-kartu">Kacamata Double Fokus (Baca dan Jalan 2 in 1) Pria Wanita Antiradiasi Antisilau Model Frameless tanpa Bingkai</p>
+              <p class="deskripsi-kartu">Kacamata Double Fokus (Baca dan Jalan 2 in 1) Pria Wanita Antiradiasi Antisilau
+                Model Frameless tanpa Bingkai</p>
               <div class="info-kartu">
                 <span class="harga-produk">Rp 31.000</span>
                 <span class="label-produk">Aksesoris mode</span>
               </div>
               <div class="aksi-kartu">
-                <a href="https://vt.tokopedia.com/t/ZSHvYk3NtdYA8-Q5l0h/" target="_blank" class="tombol-pesan">Beli Sekarang
+                <a href="https://vt.tokopedia.com/t/ZSHvYk3NtdYA8-Q5l0h/" target="_blank" class="tombol-pesan">Beli
+                  Sekarang
                 </a>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="from-bottom">
           <div class="kartu-produk" data-category="Aksesoris mode">
             <img src="assets/img-4-mode.png" alt="Charizard VMAX" class="gambar-produk">
             <div class="isi-kartu">
               <h3 class="judul-kartu">Jam tangan wanita</h3>
-              <p class="deskripsi-kartu">PROMO DIBAWAH 50ribu, jam tangan wanita terbaru cantik bisa COD watch fashion</p>
+              <p class="deskripsi-kartu">PROMO DIBAWAH 50ribu, jam tangan wanita terbaru cantik bisa COD watch fashion
+              </p>
               <div class="info-kartu">
                 <span class="harga-produk">Rp 35.000</span>
                 <span class="label-produk">Aksesoris mode</span>
@@ -230,7 +239,7 @@
             </div>
           </div>
         </div>
-        
+
         <!-- MAKANAN -->
         <div class="from-bottom">
           <div class="kartu-produk" data-category="Makanan & Minuman">
@@ -243,13 +252,14 @@
                 <span class="label-produk">Makanan</span>
               </div>
               <div class="aksi-kartu">
-                <a href="https://vt.tokopedia.com/t/ZSHn73eGKY6pw-OfHq7/" target="_blank" class="tombol-pesan">Beli Sekarang
+                <a href="https://vt.tokopedia.com/t/ZSHn73eGKY6pw-OfHq7/" target="_blank" class="tombol-pesan">Beli
+                  Sekarang
                 </a>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="from-bottom">
           <div class="kartu-produk" data-category="Makanan & Minuman">
             <img src="assets/img-2.jpeg" alt="Charizard VMAX" class="gambar-produk">
@@ -261,13 +271,14 @@
                 <span class="label-produk">Makanan</span>
               </div>
               <div class="aksi-kartu">
-                <a href="https://vt.tokopedia.com/t/ZSHn73UF28NEr-y9aw3/" target="_blank" class="tombol-pesan">Beli Sekarang
+                <a href="https://vt.tokopedia.com/t/ZSHn73UF28NEr-y9aw3/" target="_blank" class="tombol-pesan">Beli
+                  Sekarang
                 </a>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="from-bottom">
           <div class="kartu-produk" data-category="Makanan & Minuman">
             <img src="assets/img-3.jpeg" alt="Charizard VMAX" class="gambar-produk">
@@ -279,13 +290,14 @@
                 <span class="label-produk">Makanan</span>
               </div>
               <div class="aksi-kartu">
-                <a href="https://vt.tokopedia.com/t/ZSHn7TrR7YDsJ-Z0T6R/" target="_blank" class="tombol-pesan">Beli Sekarang
+                <a href="https://vt.tokopedia.com/t/ZSHn7TrR7YDsJ-Z0T6R/" target="_blank" class="tombol-pesan">Beli
+                  Sekarang
                 </a>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="from-bottom">
           <div class="kartu-produk" data-category="Makanan & Minuman">
             <img src="assets/img-4.jpeg" alt="Charizard VMAX" class="gambar-produk">
@@ -297,32 +309,36 @@
                 <span class="label-produk">Makanan</span>
               </div>
               <div class="aksi-kartu">
-                <a href="https://vt.tokopedia.com/t/ZSHn7TGxXTnUq-f5ue5/" target="_blank" class="tombol-pesan">Beli Sekarang
+                <a href="https://vt.tokopedia.com/t/ZSHn7TGxXTnUq-f5ue5/" target="_blank" class="tombol-pesan">Beli
+                  Sekarang
                 </a>
               </div>
             </div>
           </div>
         </div>
-        
+
         <!-- LAPTOP GAMING -->
         <div class="from-bottom">
           <div class="kartu-produk" data-category="Laptop gaming">
             <img src="assets/img-1-laptop.png" alt="Charizard VMAX" class="gambar-produk">
             <div class="isi-kartu">
               <h3 class="judul-kartu">LAPTOP MSI THIN 15 B12UCX 2413</h3>
-              <p class="deskripsi-kartu">MSI THIN 15 17 12650H 15 12450H RTX3050 RTX2050 32GB 16GB 8GB 1TB 512GB SSD W11 15.6FHD 144HZ BLIT 2Y B12UCX B12UC - PROMO LAPTOP GAMING -i7 - RTX2050 - 16/512GB Keyboard Windows Battery</p>
+              <p class="deskripsi-kartu">MSI THIN 15 17 12650H 15 12450H RTX3050 RTX2050 32GB 16GB 8GB 1TB 512GB SSD W11
+                15.6FHD 144HZ BLIT 2Y B12UCX B12UC - PROMO LAPTOP GAMING -i7 - RTX2050 - 16/512GB Keyboard Windows
+                Battery</p>
               <div class="info-kartu">
                 <span class="harga-produk">Rp 8.500.000</span>
                 <span class="label-produk">Laptop gaming</span>
               </div>
               <div class="aksi-kartu">
-                <a href="https://vt.tokopedia.com/t/ZSHvYD1wwjtHa-Y8JGJ/" target="_blank" class="tombol-pesan">Beli Sekarang
+                <a href="https://vt.tokopedia.com/t/ZSHvYD1wwjtHa-Y8JGJ/" target="_blank" class="tombol-pesan">Beli
+                  Sekarang
                 </a>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="from-bottom">
           <div class="kartu-produk" data-category="Laptop gaming">
             <img src="assets/img-2-laptop.png" alt="Charizard VMAX" class="gambar-produk">
@@ -334,13 +350,14 @@
                 <span class="label-produk">Laptop gaming</span>
               </div>
               <div class="aksi-kartu">
-                <a href="https://vt.tokopedia.com/t/ZSHvYD53qJBNg-q7QTx/" target="_blank" class="tombol-pesan">Beli Sekarang
+                <a href="https://vt.tokopedia.com/t/ZSHvYD53qJBNg-q7QTx/" target="_blank" class="tombol-pesan">Beli
+                  Sekarang
                 </a>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="from-bottom">
           <div class="kartu-produk" data-category="Laptop gaming">
             <img src="assets/img-3-laptop.png" alt="Charizard VMAX" class="gambar-produk">
@@ -352,109 +369,120 @@
                 <span class="label-produk">Laptop gaming</span>
               </div>
               <div class="aksi-kartu">
-                <a href="https://vt.tokopedia.com/t/ZSHvYDVdAe9Lt-vp2jA/" target="_blank" class="tombol-pesan">Beli Sekarang
+                <a href="https://vt.tokopedia.com/t/ZSHvYDVdAe9Lt-vp2jA/" target="_blank" class="tombol-pesan">Beli
+                  Sekarang
                 </a>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="from-bottom">
           <div class="kartu-produk" data-category="Laptop gaming">
             <img src="assets/img-4-laptop.png" alt="Charizard VMAX" class="gambar-produk">
             <div class="isi-kartu">
               <h3 class="judul-kartu">LAPTOP ADVAN Workmate AMD Ryzen 5</h3>
-              <p class="deskripsi-kartu">ADVAN Workmate AMD Ryzen 5 3500U 8GB/256GB 14" Inch FHD+ 16:10 IPS WiFi 5 Upgradable Free Windows 11 Garansi Resmi 1 Tahun</p>
+              <p class="deskripsi-kartu">ADVAN Workmate AMD Ryzen 5 3500U 8GB/256GB 14" Inch FHD+ 16:10 IPS WiFi 5
+                Upgradable Free Windows 11 Garansi Resmi 1 Tahun</p>
               <div class="info-kartu">
                 <span class="harga-produk">Rp 4.000.000</span>
                 <span class="label-produk">Laptop gaming</span>
               </div>
               <div class="aksi-kartu">
-                <a href="https://vt.tokopedia.com/t/ZSHvYDwHRFxXL-OMgmi/" target="_blank" class="tombol-pesan">Beli Sekarang
+                <a href="https://vt.tokopedia.com/t/ZSHvYDwHRFxXL-OMgmi/" target="_blank" class="tombol-pesan">Beli
+                  Sekarang
                 </a>
               </div>
             </div>
           </div>
         </div>
-        
+
         <!-- AUDIO & VIDEO -->
         <div class="from-bottom">
           <div class="kartu-produk" data-category="AV">
             <img src="assets/img-1-AV.png" alt="Charizard VMAX" class="gambar-produk">
             <div class="isi-kartu">
               <h3 class="judul-kartu">K12 Bluetooth Mini Speaker</h3>
-              <p class="deskripsi-kartu">K12 Bluetooth Mini Speaker Karaoke Speaker Portable with MIC Bluetooth MP3 Player Bass Wireless Karaoke</p>
+              <p class="deskripsi-kartu">K12 Bluetooth Mini Speaker Karaoke Speaker Portable with MIC Bluetooth MP3
+                Player Bass Wireless Karaoke</p>
               <div class="info-kartu">
                 <span class="harga-produk">Rp 46.000</span>
                 <span class="label-produk">Audio</span>
               </div>
               <div class="aksi-kartu">
-                <a href="https://vt.tokopedia.com/t/ZSHvYAUC7P8M2-odAU8/" target="_blank" class="tombol-pesan">Beli Sekarang
+                <a href="https://vt.tokopedia.com/t/ZSHvYAUC7P8M2-odAU8/" target="_blank" class="tombol-pesan">Beli
+                  Sekarang
                 </a>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="from-bottom">
           <div class="kartu-produk" data-category="AV">
             <img src="assets/img-2-AV.png" alt="Charizard VMAX" class="gambar-produk">
             <div class="isi-kartu">
               <h3 class="judul-kartu">MIC-206 & MIC-101 PRO Advance UHF</h3>
               <p class="deskripsi-kartu">MIC-206 & MIC-101
-                PRO Advance UHF (Nirkabel) Mic Bisa dicas Bisa Untuk Souncard Cocok Untuk semua Speaker Garansi Resmi 1 Tahun</p>
+                PRO Advance UHF (Nirkabel) Mic Bisa dicas Bisa Untuk Souncard Cocok Untuk semua Speaker Garansi Resmi 1
+                Tahun</p>
               <div class="info-kartu">
                 <span class="harga-produk">Rp 125.000</span>
                 <span class="label-produk">Audio</span>
               </div>
               <div class="aksi-kartu">
-                <a href="https://vt.tokopedia.com/t/ZSHvYAuTVFnvY-pvalb/" target="_blank" class="tombol-pesan">Beli Sekarang
+                <a href="https://vt.tokopedia.com/t/ZSHvYAuTVFnvY-pvalb/" target="_blank" class="tombol-pesan">Beli
+                  Sekarang
                 </a>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="from-bottom">
           <div class="kartu-produk" data-category="AV">
             <img src="assets/img-3-AV.png" alt="Charizard VMAX" class="gambar-produk">
             <div class="isi-kartu">
               <h3 class="judul-kartu">Headphone Bluetooth Y08 Macaron</h3>
-              <p class="deskripsi-kartu">Headphone Bluetooth Y08 Macaron Gaming Wireless Murah Bass dengan Mikrofon Microphone</p>
+              <p class="deskripsi-kartu">Headphone Bluetooth Y08 Macaron Gaming Wireless Murah Bass dengan Mikrofon
+                Microphone</p>
               <div class="info-kartu">
                 <span class="harga-produk">Rp 28.000</span>
                 <span class="label-produk">Audio</span>
               </div>
               <div class="aksi-kartu">
-                <a href="https://vt.tokopedia.com/t/ZSHvYAVahWW4b-nNNIP/" target="_blank" class="tombol-pesan">Beli Sekarang
+                <a href="https://vt.tokopedia.com/t/ZSHvYAVahWW4b-nNNIP/" target="_blank" class="tombol-pesan">Beli
+                  Sekarang
                 </a>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="from-bottom">
           <div class="kartu-produk" data-category="AV">
             <img src="assets/img-4-AV.png" alt="Charizard VMAX" class="gambar-produk">
             <div class="isi-kartu">
               <h3 class="judul-kartu">Headset KZ EDX Pro</h3>
-              <p class="deskripsi-kartu">KZ EDX Pro with Mic Noise Cancelling Earphone Heavy Bass Sensation Sport Headset Earphones</p>
+              <p class="deskripsi-kartu">KZ EDX Pro with Mic Noise Cancelling Earphone Heavy Bass Sensation Sport
+                Headset Earphones</p>
               <div class="info-kartu">
                 <span class="harga-produk">Rp 85.000</span>
                 <span class="label-produk">Audio</span>
               </div>
               <div class="aksi-kartu">
-                <a href="https://vt.tokopedia.com/t/ZSHvYAtjhRxfH-SnQIh/" target="_blank" class="tombol-pesan">Beli Sekarang
+                <a href="https://vt.tokopedia.com/t/ZSHvYAtjhRxfH-SnQIh/" target="_blank" class="tombol-pesan">Beli
+                  Sekarang
                 </a>
               </div>
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
   </section>
-  
+
   <!-- About Section -->
   <section id="tentang">
     <div class="kontainer-tentang">
@@ -499,7 +527,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="gambar-tentang">
           <div class="bungkus-gambar">
             <div class="kotak-besar">
@@ -511,7 +539,7 @@
       </div>
     </div>
   </section>
-  
+
   <!-- Contact Section -->
   <section id="kontak">
     <div class="kontainer-kontak">
@@ -521,7 +549,7 @@
           Ada pertanyaan seputar rekomendasi produk, kerja sama, atau ide kolaborasi? Kami siap mendengarkan!
         </p>
       </div>
-      
+
       <div class="kotak-form">
         <form id="formKontak" class="formulir">
           <div class="from-bottom">
@@ -530,7 +558,7 @@
           <div class="from-bottom">
             <input type="email" id="email" name="email" placeholder="Email" required class="input-form">
           </div>
-          
+
           <div class="from-bottom">
             <select id="subjek" name="subjek" required class="select-form">
               <option style="color: black !important;" value="">Pilih Topik</option>
@@ -540,11 +568,11 @@
               <option style="color: black !important;" value="Lainnya">Lainnya</option>
             </select>
           </div>
-          
+
           <div class="from-bottom">
             <textarea id="pesan" name="pesan" rows="5" placeholder="Pesan" required class="textarea-form"></textarea>
           </div>
-          
+
           <div class="tombol-grup">
             <div class="from-bottom" style="width: 100%;">
               <button type="submit" id="tombolWa" class="tombol wa">
@@ -563,12 +591,12 @@
       </div>
     </div>
   </section>
-  
+
   <!-- Footer -->
   <footer class="ft">
     <div class="kt">
       <div class="gd">
-        
+
         <div class="kol2">
           <div class="jd from-bottom">CoolStyle</div>
           <p class="ds from-bottom">
@@ -589,7 +617,7 @@
             </a>
           </div>
         </div>
-        
+
         <div class="kol1">
           <h3 class="jk from-bottom">Kategori</h3>
           <ul class="dl">
@@ -599,7 +627,7 @@
             <li class="from-bottom"><a href="#products">Audio & Video</a></li>
           </ul>
         </div>
-        
+
         <div class="kol1">
           <h3 class="jk from-bottom">Informasi</h3>
           <ul class="dl">
@@ -608,16 +636,16 @@
             <li class="from-bottom"><a href="privasi-cookie.html">Privasi & Cookie</a></li>
             <li class="from-bottom"><a href="#kontak">Hubungi Kami</a></li>
           </ul>
-          
+
         </div>
       </div>
-      
+
       <div class="gr from-bottom">
         <p>&copy; 2025 CoolStyle. Semua hak cipta dilindungi.</p>
       </div>
     </div>
   </footer>
-  
+
   <script src="script.js"></script>
 </body>
 

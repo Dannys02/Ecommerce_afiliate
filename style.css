@@ -269,36 +269,36 @@ body {
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
         transition: top 0.3s ease-in-out;
     }
-    
+
     .nav-menu.active {
         top: 100%;
     }
-    
+
     .line-one.active {
         transform: rotate(-45deg) translateY(8px);
         width: 100%;
     }
-    
+
     .line-two.active {
         width: 0;
         opacity: 0;
     }
-    
+
     .line-three.active {
         transform: rotate(45deg) translateY(-8px);
         width: 100%;
     }
-    
+
     .nav-link i {
         opacity: 1;
         color: white !important;
         transition: all 0.3s ease;
     }
-    
+
     .nav-link:hover i {
         color: #2563eb !important;
     }
-    
+
     .nav-mobile-btn {
         display: flex;
         flex-direction: column;
@@ -362,7 +362,7 @@ body {
     background: linear-gradient(to right, #2563eb, #9333ea);
     border-radius: 32px 32px 0 0;
     transform: translate(0%, 110%);
-    transition: border 2s ease, transform 0.5s ease, border-radius 0.5s ease;
+    transition: transform 0.5s ease, border-radius 0.5s ease;
     z-index: 0;
 }
 
@@ -378,7 +378,6 @@ body {
 
 .tombol-home:hover {
     box-shadow: 0 10px 20px rgba(59, 130, 246, 0.5);
-    border: 1px solid transparent;
 }
 
 .kartu-koleksi-home {
@@ -393,7 +392,7 @@ body {
     .kartu-koleksi-home {
         flex-direction: column;
     }
-    
+
     .kartu-home {
         width: 20rem !important;
     }
@@ -467,12 +466,12 @@ body {
 }
 
 @keyframes mengambang {
-    
+
     0%,
     100% {
         transform: translateY(0);
     }
-    
+
     50% {
         transform: translateY(-10px);
     }
@@ -510,15 +509,14 @@ body {
 
 .input-cari {
     width: 100%;
-    padding: 14px 38px 14px 14px;
-    border-radius: 15px;
+    padding: 14px 38px 14px 58px;
+    border-radius: 30px;
     border: none;
     outline: none;
     font-size: 16px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
     transition: all 0.3s ease;
 }
-
 
 .clear-btn {
     z-index: 2;
@@ -533,19 +531,25 @@ body {
 }
 
 .search-btn {
-    background: linear-gradient(to right, #2563eb, #9333ea);
-    border-radius: 15px;
-    display: flex;
+    position: absolute;
+    left: 15px;
+    bottom: 15%;
+    background: #9333ea;
+    border-radius: 50%;
     border: none;
-    justify-content: center;
-    align-items: center;
     gap: 3px;
-    width: 100px;
+    height: 35px;
+    width: 35px;
+    transition: background 0.3s ease;
+}
+
+.search-btn:hover {
+    background: rgb(63, 43, 245);
 }
 
 .ikon-cari {
-    width: 32px;
-    height: 32px;
+    width: 22px;
+    height: 22px;
     color: white;
     cursor: pointer;
     transition: stroke 0.3s ease;
@@ -601,7 +605,7 @@ body {
 
 .grid-produk {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     padding-inline: 25px;
     position: relative;
@@ -771,6 +775,18 @@ body {
 }
 
 @media (max-width: 768px) {
+    #tentang {
+        padding: 2.5rem 0;
+    }
+
+    .judul-tentang {
+        font-size: 2rem !important;
+    }
+
+    .kontainer-tentang {
+        padding: 0 1rem;
+    }
+
     .grid-tentang {
         grid-template-columns: 1fr;
     }
@@ -886,7 +902,7 @@ body {
     0% {
         transform: rotate(0deg);
     }
-    
+
     100% {
         transform: rotate(360deg);
     }
@@ -894,12 +910,12 @@ body {
 
 
 @keyframes melayang {
-    
+
     0%,
     100% {
         transform: translateY(0);
     }
-    
+
     50% {
         transform: translateY(-15px);
     }
@@ -922,7 +938,7 @@ body {
         transform: translateY(20px);
         opacity: 0;
     }
-    
+
     100% {
         transform: translateY(0);
         opacity: 1;
@@ -975,7 +991,7 @@ body {
     .kotak-form {
         margin-inline: 0;
     }
-    
+
     .grid-dua {
         grid-template-columns: 1fr 1fr;
     }
@@ -1212,7 +1228,7 @@ body {
         transform: scale(0.6);
         opacity: 0;
     }
-    
+
     to {
         transform: scale(1);
         opacity: 1;
